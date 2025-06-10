@@ -3,6 +3,7 @@ chillguybot/
 
 #Ignore Environment Variable Files
 .env
+keys.env
 
 # Ignore Python cache
 __pycache__/
@@ -10,3 +11,6 @@ __pycache__/
 
 # Ignore IDE/editor config (optional)
 .vscode/
+
+# Ignore Context
+context.txt

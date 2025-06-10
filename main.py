@@ -7,9 +7,6 @@ from discord.ext import commands
 #Loading keys/tokens from .env
 load_dotenv()
 
-#Load context file
-with open("context.txt", "r", encoding="utf-8") as f:
-    context = f.read()
 #Discord Bot Setup
 intents = discord.Intents.default()
 intents.message_content = True
@@ -44,7 +41,7 @@ async def yochillguy(ctx, *, message: str = "hi"):
     messages=[
         {
             "role": "user",
-            "content": f"""message: {message} {context}""",
+            "content": f"""message: {message} {os.getenv("CONTEXT")}""",
         }
     ],
     model="llama-3.3-70b-versatile",
