@@ -1,0 +1,12 @@
+#Ignore Virtual Environment
+chillguybot/
+
+#Ignore Environment Variable Files
+.env
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore IDE/editor config (optional)
+.vscode/
