@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 import discord
 from discord.ext import commands
+import time
 
 #Loading keys/tokens from .env
 load_dotenv()
@@ -41,7 +42,7 @@ async def yochillguy(ctx, *, message: str = "hi"):
     messages=[
         {
             "role": "user",
-            "content": f"""message: {message} {os.getenv("CONTEXT")}""",
+            "content": f"""message from {ctx.author}: {message} {os.getenv("CONTEXT")}""",
         }
     ],
     model="llama-3.3-70b-versatile",
@@ -49,7 +50,7 @@ async def yochillguy(ctx, *, message: str = "hi"):
 
     print(f"{ctx.author} said \"{message}\", and Chillguybot replied with: \"{chat_completion.choices[0].message.content}\"")
 
-
+    time.sleep(1.5)
     await ctx.send(chat_completion.choices[0].message.content)
 
 bot.run(os.getenv("DISCORD_BOT_TOKEN"))
